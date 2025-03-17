@@ -15,9 +15,19 @@ public class FindSmallNumber_4 {
         System.out.print("Enter third number: ");
         int num3 = scanner.nextInt();
 
-        int smallest = Math.min(num1, Math.min(num2, num3));
-
-        System.out.println("The smallest number is: " + smallest);
+        int smallestIfElse;
+        if (num1 <= num2 && num1 <= num3) {
+            smallestIfElse = num1;
+        } else if (num2 <= num1 && num2 <= num3) {
+            smallestIfElse = num2;
+        } else {
+            smallestIfElse = num3;
+        }
+        System.out.println("The smallest number using if-else is: " + smallestIfElse);
+        
+        int smallestTernary = (num1 <= num2 && num1 <= num3) ? num1 :
+                (num2 <= num1 && num2 <= num3) ? num2 : num3;
+        System.out.println("The smallest number using ternary operator is: " + smallestTernary);
 
         scanner.close();
     }
